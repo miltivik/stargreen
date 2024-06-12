@@ -1,0 +1,137 @@
+body{
+    height: 100vh;
+}
+
+.contact {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.contact-box {
+    display: flex;
+    justify-content: center;
+}
+
+.first-block {
+    position: absolute;
+    left: 55vh;
+    top: 15vh;
+}
+.second-block {
+    position: absolute;
+    top: 15vh;
+}
+.three-block {
+    position: absolute;
+    top: 15vh;
+    right: 55vh;
+}
+.first-block-img {
+    display: flex;
+    justify-content: center;
+}
+.first-block-title{
+    display: flex;
+    justify-content: center;
+}
+.second-block-img {
+    display: flex;
+    justify-content: center;
+}
+.second-block-title {
+    display: flex;
+    justify-content: center;
+}
+.three-block-img {
+    display: flex;
+    justify-content: center;
+}
+.three-block-title {
+    display: flex;
+    justify-content: center;
+}
+.first-block-img {
+    height: 44px;
+}
+.second-block-img {
+    height: 44px;
+}
+.three-block-img {
+    height: 44px;
+}
+.first-block-title{
+    font-size: 16px;
+}
+.second-block-title{
+    font-size: 16px;
+}
+.three-block-title {
+    font-size: 16px;
+}
+.form-box {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 23%;
+}
+.contact-left div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    padding-top: 35px;
+   
+}
+.contact-title {
+    display: flex;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    font-size: 30px
+}
+.contact-input {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    color: #666;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+   -o-border-radius: 50px;
+   font-weight: 500;
+}
+.contact-input-textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.contact-input:focus {
+    border: solid 2px #248f60;
+}
+.contact-input::placeholder {
+    color: #a9a9a9;
+}
+.boton-box {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    background: linear-gradient(270deg,#248f60,#1c744c);
+    cursor: pointer;
+    margin-top: 20px;
+}
