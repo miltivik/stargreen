@@ -1,8 +1,20 @@
-.main-p {
-    display: flex;
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
 }
+.icon-shop {
+    width: 40px;
+    height: 40px;
+}
+img {
+    max-width: 100;
+}
+.contain-header {
+    display: flex;
+    position: relative;
+    width: 40px;
+    left: 100vh;
 
-.contain-1 ul {
-    list-style: none;
-    text-decoration: none;
 }
