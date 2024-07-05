@@ -237,7 +237,7 @@ main {
 }
 .posicion-mover {
     position: relative;
-    left: 10%;
+    left: 9.7%;
 }
 .content-text {
     position: relative;
@@ -255,4 +255,7 @@ main {
 }
 @media(min-width: 1366px) {
     
+}
+.container-img {
+    width: 70vh;
 }

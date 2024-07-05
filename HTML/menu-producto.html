@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/FUENTES/Neco_Complete/Fonts/WEB/css/neco.css">
     <link rel="stylesheet" href="/CSS/pagina-producto.css">
     <link rel="stylesheet" href="/FUENTES/GeneralSans_Complete/Fonts/WEB/css/general-sans.css">
+    <link rel="stylesheet" href="/CSS/swiper-bundle.min.css">
     <link rel="stylesheet" href="/CSS/slider.css">
     <title>Producto x</title>
 </head>
@@ -37,9 +38,20 @@
      
     <div class="content-title title-mover">Golf stick</div>
     <main>
-    <div class="container-img posicion-mover">
-        <img src="/IMG/photo-1560769629-975ec94e6a86.avif" alt="">
-    </div>
+<div class="swiper">
+       <div class="swiper-wrapper">
+         <div class="swiper-slide">
+             <img src="/IMG/render.png" alt="">
+         </div>
+         <div class="swiper-slide">
+            <img src="/IMG/render-2.png" alt="">
+        </div>
+
+       </div>
+       <div class="swiper-button-next"></div>
+       <div class="swiper-button-prev"></div>
+       <div class="swiper-pagination"></div>
+</div>
     
     <div class="contain-info-producto posicion-mover">
         <div class="container-price posicion-mover ">
@@ -239,6 +251,25 @@
         
     </footer>
     <script src="/JS/pagina-producto.js "></script>
-    
+
+     <!-- Swiper JS -->
+  <script src="/JS/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".swiper", {
+      slidesPerView: 1,
+      spaceBetween: 70,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 </body>
 </html>
