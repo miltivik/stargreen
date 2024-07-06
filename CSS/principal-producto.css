@@ -11,11 +11,11 @@
     cursor: pointer;
 }
 
-#cart-icon[data-quantitiy]::after {
+#cart-icon[data-quantity="0"]::after {
     contain:"";
 }
-#cart-icon[data-quantitiy]::after {
-    content:"";
+#cart-icon[data-quantity]::after {
+    content:attr(data-quantity);
     position: absolute;
     top: -30%;
     right: -13px;
@@ -77,8 +77,8 @@
     margin-right: 1rem;
 }
 .total-price {
-    font-size: 1.07rem;
-    margin: 1rem 0 0 0.7rem; 
+    font-size: 1.2rem;
+    margin: 1rem 0 0 0; 
 }
 .btn-buy {
     display: flex;
