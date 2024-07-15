@@ -32,7 +32,7 @@ body{
 }   
 
 .menuu a:hover {
-    background-color:   #248f60 ;
+    background-color:   #248f615d ;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -43,7 +43,6 @@ body{
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
-
 }
 
 .texto-1 {
@@ -203,7 +202,9 @@ body{
     align-content: space-evenly;
     margin: 0;
     padding: 0 0 0 0;
-    margin-top: 5px;
+    margin-top: 15px;
+    right: 5%;
+    position: absolute;
 }
 .content {
     display: flex;

@@ -237,3 +237,14 @@
     box-shadow: 0 8px 32px hsl(0.75, 0.82, 0.165, 1);
     transition: .4s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
+.btn-none {
+    text-decoration: none;
+    color: #fff;
+}
+.header .header-right {
+    display: flex;
+}
+.header .header-right li.menu-item {
+    display: block;
+    text-decoration: none;
+}

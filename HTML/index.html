@@ -10,20 +10,91 @@
     <link href="https://fonts.googleapis.com/css2?family=Danfo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/FUENTES/Satoshi_Complete/Fonts/WEB/css/satoshi.css">
     <link rel="stylesheet" href="/CSS/cabezales.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/CSS/menu-bar.css">
+    <link rel="stylesheet" href="/CSS/principal-producto.css">
+    <script src="/JS/principal-producto.min.js" defer></script>
 </head>
 <body>
     <header class="menuu banner" >
-        <ul class="menuu">
-            <li class="menuu"><a class="barra" href="index.html">Inicio</a></li>
-            <li class="menuu"><a class="barra" href="/HTML/producto.html">Producto</a></li>
-            <li class="menuu"><a class="barra" href="/HTML/contacto.html">Contacto</a></li>
-            <li class="menuu"><a class="barra" href="sobre nosotros.html">Sobre nosotros</a></li>
-        </ul>
+        <div class="header-right menuu">
+            <ul class="main-menu menuu">
+                <li class="menu-item"><a href="/HTML/index.html" class="active barra">Inicio</a></li>
+
+                <li class="menu-item mega-menu ">
+                    <a href="/HTML/producto.html" >Productos </a>
+                    <div class="mega-menu-wrapper slideInUp">
+                        <div class="mega-menu-col">
+                            <h5>Menu block 1</h5>
+                            <ul class="mega-sub-menu">
+                                <li><a href="#">Menu block item 1</a></li>
+                                <li><a href="#">Menu block item 2</a></li>
+                                <li><a href="#">Menu block item 3</a></li>
+                                <li><a href="#">Menu block item 4</a></li>
+                                <li><a href="#">Menu block item 5</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-col">
+                            <h5>Menu block 2</h5>
+                            <ul class="mega-sub-menu">
+                                <li><a href="#">Menu block item 1</a></li>
+                                <li><a href="#">Menu block item 2</a></li>
+                                <li><a href="#">Menu block item 3</a></li>
+                                <li><a href="#">Menu block item 4</a></li>
+                                <li><a href="#">Menu block item 5</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-col">
+                            <h5>Menu block 3</h5>
+                            <ul class="mega-sub-menu">
+                                <li><a href="#">Menu block item 1</a></li>
+                                <li><a href="#">Menu block item 2</a></li>
+                                <li><a href="#">Menu block item 3</a></li>
+                                <li><a href="#">Menu block item 4</a></li>
+                                <li><a href="#">Menu block item 5</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-col">
+                            <h5>Menu block 4</h5>
+                            <ul class="mega-sub-menu">
+                                <li><a href="#">Menu block item 1</a></li>
+                                <li><a href="#">Menu block item 2</a></li>
+                                <li><a href="#">Menu block item 3</a></li>
+                                <li><a href="#">Menu block item 4</a></li>
+                                <li><a href="#">Menu block item 5</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="menu-item"><a href="/HTML/sobre nosotros.html">Sobre Nosotros</a></li>
+                <li class="menu-item"><a href="/HTML/contacto.html">Contacto</a></li>
+            </ul>
+        </div>
         <div class="login-icon">
             <div class="content">
                 <a class="icon-login" href="/HTML/login.html">
                     <img src="/IMG/login.png" alt="">
-                 </a>   
+                </a>   
+            </div>
+        </div>
+        <div class="cart-icon-container">
+            <div class="cart-icon">
+                <i class="fa-solid fa-cart-shopping" id="cart-icon" data-quantitiy="0"></i>
+            </div>
+            <div class="cart">
+                <div class="cart-title">
+                    <h2>Carrito</h2>
+                    <div class="cart-content">
+                        </div>
+                    </div>
+                    <div class="total">
+                        <div class="total-title">Total</div>
+                        <div class="total-price">$0</div>
+                    </div>
+                    <a href="/HTML/pasarela.html" class="btn-none"><button class="btn-buy" type="button">Comprar</button></a>
+                    <i class="fa-solid fa-xmark" id="close-cart"></i>
+                </div>
             </div>
         </div>
     </header>

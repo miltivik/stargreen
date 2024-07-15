@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Tarjeta.css">
+    <script src="/JS/tarjeta.min.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <form action="#">
+
+            <div class="row">
+
+                <div class="col">
+                    <h3 class="title">Billing Address</h3>
+
+                    <div class="inputBox">
+                        <label for="name">Nombre Completo:</label>
+                        <input type="text" id="name" placeholder="Escribe tu Nombre Completo" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" placeholder="Escribe tu Email" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="address">Dirrecion:</label>
+                        <input type="text" id="address" placeholder="Escribe tu Direccion" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="city">Ciudad:</label>
+                        <input type="text" id="city" placeholder="Escribe tu Ciudad" required>
+                    </div>
+
+                    <div class="flex">
+
+                        <div class="inputBox">
+                            <label for="state">Estado:</label>
+                            <input type="text" id="state" placeholder="Escribe tu Estado" required>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="zip">Codigo Postal:</label>
+                            <input type="number" id="zip" placeholder="123 456" required>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <h3 class="title">Metodo de Pago</h3>
+
+                    <div class="inputBox">
+                        <label for="name">Tarjetas Aceptadas:</label>
+                        <img src="https://i.ibb.co/X38b5PF/card-img.png" alt="">
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="cardName">Nombre del propietario:</label>
+                        <input type="text" id="cardName" placeholder="Escribe el Nombre del propietario" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="cardNum">Numero de tarjeta:</label>
+                        <input type="text" id="cardNum" placeholder="1111-2222-3333-4444" maxlength="19" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="">Mes de Vencimiento:</label>
+                        <select name="" id="">
+                            <option value="">Elegir Mes</option>
+                            <option value="January">Enero</option>
+                            <option value="February">Febrero</option>
+                            <option value="March">Marzo</option>
+                            <option value="April">Abril</option>
+                            <option value="May">Mayo</option>
+                            <option value="June">Junio</option>
+                            <option value="July">Julio</option>
+                            <option value="August">Agosto</option>
+                            <option value="September">Septiembre</option>
+                            <option value="October">Octubre</option>
+                            <option value="November">Noviembre</option>
+                            <option value="December">Diciembre</option>
+                        </select>
+                    </div>
+
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <label for="">Año Vencimiento:</label>
+                            <select name="" id="">
+                                <option value="">Elige el Año</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                            </select>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="cvv">CVV</label>
+                            <input type="number" id="cvv" placeholder="1234" required>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <input type="submit" value="Proceed to Checkout" class="submit_btn">
+        </form>
+
+    </div>
+</body>
+</html>
