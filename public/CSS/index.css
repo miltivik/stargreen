@@ -1,0 +1,27 @@
+body{
+    margin: 0px;
+}   
+
+.pagina-1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.stargreen {
+    height: 30px;
+    margin:auto;
+    padding:80% 0 0 15%;
+}
+
+.refran {
+    height: 200px;
+    margin:auto;
+    padding:10px 0 0 0;
+}
+.reserva {
+    margin: auto;
+    padding: 0 20px;
+    margin: 0 20%;
+}

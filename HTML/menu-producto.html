@@ -17,21 +17,93 @@
     <link rel="stylesheet" href="/FUENTES/GeneralSans_Complete/Fonts/WEB/css/general-sans.css">
     <link rel="stylesheet" href="/CSS/swiper-bundle.min.css">
     <link rel="stylesheet" href="/CSS/slider.css">
+    <link rel="stylesheet" href="/CSS/menu-bar.css">
+    <link rel="stylesheet" href="/CSS/principal-producto.css">
+    <script src="/JS/principal-producto.min.js" defer></script>
     <title>Producto x</title>
 </head>
 <body>
     <header class="menuu banner" >
-        <ul class="menuu">
-            <li class="menuu"><a class="barra" href="index.html">Inicio</a></li>
-            <li class="menuu"><a class="barra" href="/HTML/producto.html">Producto</a></li>
-            <li class="menuu"><a class="barra" href="/HTML/contacto.html">Contacto</a></li>
-            <li class="menuu"><a class="barra" href="sobre nosotros.html">Sobre nosotros</a></li>
-        </ul>
+        <div class="header-right menuu">
+            <ul class="main-menu menuu">
+                <li class="menu-item"><a href="/index.html" class="active barra">Inicio</a></li>
+
+                <li class="menu-item mega-menu ">
+                    <a href="/producto.html" >Productos </a>
+                    <div class="mega-menu-wrapper slideInUp">
+                        <div class="mega-menu-col">
+                            <h5>Palos de Golf</h5>
+                            <ul class="mega-sub-menu">
+                                <li><a href="#">Menu block item 1</a></li>
+                                <li><a href="#">Menu block item 2</a></li>
+                                <li><a href="#">Menu block item 3</a></li>
+                                <li><a href="#">Menu block item 4</a></li>
+                                <li><a href="#">Menu block item 5</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-col">
+                            <h5>Hombre</h5>
+                            <ul class="mega-sub-menu">
+                                <li><a href="#">Menu block item 1</a></li>
+                                <li><a href="#">Menu block item 2</a></li>
+                                <li><a href="#">Menu block item 3</a></li>
+                                <li><a href="#">Menu block item 4</a></li>
+                                <li><a href="#">Menu block item 5</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-col">
+                            <h5>Mujeres</h5>
+                            <ul class="mega-sub-menu">
+                                <li><a href="#">Menu block item 1</a></li>
+                                <li><a href="#">Menu block item 2</a></li>
+                                <li><a href="#">Menu block item 3</a></li>
+                                <li><a href="#">Menu block item 4</a></li>
+                                <li><a href="#">Menu block item 5</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-col">
+                            <h5>Jovenes</h5>
+                            <ul class="mega-sub-menu">
+                                <li><a href="#">Menu block item 1</a></li>
+                                <li><a href="#">Menu block item 2</a></li>
+                                <li><a href="#">Menu block item 3</a></li>
+                                <li><a href="#">Menu block item 4</a></li>
+                                <li><a href="#">Menu block item 5</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="menu-item"><a href="/sobre nosotros.html">Sobre Nosotros</a></li>
+                <li class="menu-item"><a href="/contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
         <div class="login-icon">
             <div class="content">
-                <a class="icon-login" href="/HTML/login.html">
+                <a class="icon-login" href="http://localhost:4000/">
                     <img src="/IMG/login.png" alt="">
                  </a>   
+            </div>
+        </div>
+        <!-- Icono del carrito -->
+        <div class="cart-icon-container">
+            <div class="cart-icon">
+                <i class="fa-solid fa-cart-shopping" id="cart-icon" data-quantitiy="0"></i>
+            </div>
+            <div class="cart">
+                <div class="cart-title">
+                    <h2>Carrito</h2>
+                    <div class="cart-content">
+                        </div>
+                    </div>
+                    <div class="total">
+                        <div class="total-title">Total</div>
+                        <div class="total-price">$0</div>
+                    </div>
+                    <a href="/HTML/pasarela.html" class="btn-none"><button class="btn-buy" type="button">Comprar</button></a>
+                    <i class="fa-solid fa-xmark" id="close-cart"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -274,5 +346,6 @@
       },
     });
   </script>
+  
 </body>
 </html>
