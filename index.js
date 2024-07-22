@@ -3,6 +3,7 @@ import express from "express";
 import path from "path";
 import {fileURLToPath} from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import { methods as authentication } from "./controllers/authentication.controller.js";
 
 //Server
 const app = express();
@@ -12,7 +13,7 @@ console.log("servidor corriendo en el puerto",app.get("port"));
 
 //configuracion
 app.use(express.static(__dirname + "/public"));
-
+app.use(express.json());
 
 // Rutas
 app.get("/",(req,res)=> res.sendFile (__dirname + "/HTML/login.html"));
@@ -22,3 +23,6 @@ app.get("/index.html",(req,res)=> res.sendFile (__dirname + "/HTML/index.html"))
 app.get("/sobre%20nosotros.html",(req,res)=> res.sendFile (__dirname + "/HTML/sobre nosotros.html"));
 app.get("/contacto.html",(req,res)=> res.sendFile (__dirname + "/HTML/contacto.html"));
 app.get("/menu-producto.html",(req,res)=> res.sendFile (__dirname + "/HTML/menu-producto.html"));
+app.get("/pasarela.html",(req,res)=> res.sendFile (__dirname + "/HTML/pasarela.html"));
+app.post("/api/register",authentication.register);
+app.post("/api/login",authentication.login);
