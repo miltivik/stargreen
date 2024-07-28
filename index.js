@@ -26,3 +26,33 @@ app.get("/menu-producto.html",(req,res)=> res.sendFile (__dirname + "/HTML/menu-
 app.get("/pasarela.html",(req,res)=> res.sendFile (__dirname + "/HTML/pasarela.html"));
 app.post("/api/register",authentication.register);
 app.post("/api/login",authentication.login);
+
+app.post('/validar', function(req,res){
+    const datos = req.body;
+
+    let user = datos.user
+    let user_email = datos.user_email
+    let password = datos.password
+
+    let registrar ="INSER INTO usuarios(user_id,user_username,_user_email,password)"
+});
+
+//conexion a la base de datos
+//const mysql = import ("mysql");
+
+//let connection = mysql.createConnection({
+//    host: "localhost",
+//    user: "root",
+  //  password: "",
+    //database: "Stargreen",
+//})
+
+//connection.connect ((err) => {
+  //  if(err){
+    //    console.error("Error database", err);
+      //  return;
+   // }
+   // console.log ('Conexion Exitosa a la base de datos')
+//});
+
+//module.exports = connection;

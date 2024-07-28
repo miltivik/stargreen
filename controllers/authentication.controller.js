@@ -4,10 +4,10 @@ async function login(req,res){
 
 async function register(req,res){
     console.log(req.body);
-    const user = req.body.user;
+    const user_email = req.body.user_email;
     const password = req.body.password;
-    const password_repeat = req.body.password_repeat;
-    if (!user || !password || !password_repeat){
+    const user = req.body.user;
+    if (!user || !password || !user_email){
         res.status(400).send({status:"Error",message:"Los campos estan incompletos"})
     }
 }

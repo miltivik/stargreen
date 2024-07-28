@@ -7,9 +7,9 @@ document.getElementById("register-form").addEventListener("submit",async(e)=>{
             "Content-type" : "application/json"
         },
         body: JSON.stringify({
-            user: e.target.elements.user.value,
+            user_email: e.target.elements.user_email.value,
             password: e.target.elements.password.value,
-            password_repeat: e.target.elements.password_repeat.value,
+            user: e.target.elements.user.value,
         })
     });
 });
