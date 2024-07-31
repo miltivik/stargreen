@@ -1,6 +1,6 @@
 import express from "express";
 import morgan from "morgan";
-import mysql from "mysql"
+
 //fix para __dirname
 import path from "path";
 import {fileURLToPath} from "url";

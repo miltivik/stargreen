@@ -4,7 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --exec node mysql.js"
+    "dev": "nodemon --exec node index.js",
+    "sql": "nodemon ./database/mysql_conection.cjs"
   },
   "keywords": [],
   "author": "",
