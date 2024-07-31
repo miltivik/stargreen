@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --exec node index.js"
+    "dev": "nodemon --exec node mysql.js"
   },
   "keywords": [],
   "author": "",
@@ -18,10 +18,11 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
-    "mysql": "^2.18.1",
+    "mysql2": "^3.11.0",
     "promise-mysql": "^5.2.0"
   },
   "devDependencies": {
+    "morgan": "^1.10.0",
     "nodemon": "^3.1.4"
   }
 }

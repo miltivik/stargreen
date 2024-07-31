@@ -1,15 +1,25 @@
 import express from "express";
+import morgan from "morgan";
+import mysql from "mysql"
 //fix para __dirname
 import path from "path";
 import {fileURLToPath} from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 import { methods as authentication } from "./controllers/authentication.controller.js";
 
+
 //Server
 const app = express();
 app.set("port",4000);
 app.listen(app.get("port"));
 console.log("servidor corriendo en el puerto",app.get("port"));
+
+app.get('/productos',(req,res) => {
+  res.send('mensaje recibido')
+});
+
+//Middlewares
+app.use(morgan('dev'))
 
 //configuracion
 app.use(express.static(__dirname + "/public"));
