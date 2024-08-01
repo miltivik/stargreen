@@ -26,3 +26,5 @@ conexion.query("SELECT * from usuarios", function(error,results,fields){
 })
 
 conexion.end();
+
+module.exports = conexion;

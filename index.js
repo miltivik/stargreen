@@ -1,5 +1,8 @@
 import express from "express";
 import morgan from "morgan";
+import conexion from "./database/mysql_conection.cjs";
+import cors from 'cors';
+import bodyParser from "body-parser";
 
 //fix para __dirname
 import path from "path";
@@ -47,22 +50,7 @@ app.post('/validar', function(req,res){
     let registrar ="INSER INTO usuarios(user_id,user_username,_user_email,password)"
 });
 
-//conexion a la base de datos
-//const mysql = import ("mysql");
-
-//let connection = mysql.createConnection({
-//    host: "localhost",
-//    user: "root",
-  //  password: "",
-    //database: "Stargreen",
-//})
-
-//connection.connect ((err) => {
-  //  if(err){
-    //    console.error("Error database", err);
-      //  return;
-   // }
-   // console.log ('Conexion Exitosa a la base de datos')
-//});
-
-//module.exports = connection;
+//obtener datos para mysql
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded ({extended: false}));

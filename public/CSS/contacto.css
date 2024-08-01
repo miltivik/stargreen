@@ -73,6 +73,7 @@ body{
     align-content: center;
     justify-content: center;
     margin-top: 23%;
+    box-shadow: 10px 10px #e2e2cca4;
 }
 .contact-left div {
     display: flex;
@@ -138,4 +139,14 @@ body{
 .boton-box:hover {
     transform: scale(1.036,1.04);
     transition: .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@media screen {
+    .form-box {
+        width: 100vh;
+        position: relative;
+        left: 30%;
+        height: 85vh;
+        border-radius: 10px;
+    }
 }
