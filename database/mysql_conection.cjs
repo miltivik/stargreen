@@ -21,7 +21,7 @@ conexion.query("SELECT * from usuarios", function(error,results,fields){
         throw error;
 
     results.forEach(result => {
-        console.log(result);
+        console.table(result);
     });
 })
 
