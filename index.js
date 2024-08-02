@@ -4,6 +4,7 @@ import conexion from "./database/mysql_conection.cjs";
 import cors from 'cors';
 import bodyParser from "body-parser";
 import dotenv from 'dotenv';
+import bcryptjs from 'bcryptjs';
 
 //fix para __dirname
 import path from "path";
@@ -44,14 +45,14 @@ app.get("/pasarela.html",(req,res)=> res.sendFile (__dirname + "/HTML/pasarela.h
 app.post("/api/register",authentication.register);
 app.post("/api/login",authentication.login);
 
-app.post('/valid', async(req,res) => {
+app.post('./valid', async(req,res) => {
     const datos = req.body;
     const user = req.body.user;
     const user_email = req.body.user_email;
     const password = req.body.password;
 
     let passwordHaash = await bcryptjs.hash(password, 8);
-    conexion.query('INSER INTO usuarios SET ?', {user:user, user_email:user_email, password:passwordHaash}, async(error, results) =>{
+    conexion.query('INSERT INTO usuarios SET ?', {user:user, user_email:user_email, password:passwordHaash}, async(error, results) =>{
       if(error){
         console.log(error);
       }else{
