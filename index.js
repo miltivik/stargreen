@@ -3,6 +3,7 @@ import morgan from "morgan";
 import conexion from "./database/mysql_conection.cjs";
 import cors from 'cors';
 import bodyParser from "body-parser";
+import dotenv from 'dotenv';
 
 //fix para __dirname
 import path from "path";
@@ -24,6 +25,9 @@ app.get('/productos',(req,res) => {
 //Middlewares
 app.use(morgan('dev'))
 
+//dotenv config
+dotenv.config({path:'/env/.env'});
+
 //configuracion
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
@@ -40,14 +44,20 @@ app.get("/pasarela.html",(req,res)=> res.sendFile (__dirname + "/HTML/pasarela.h
 app.post("/api/register",authentication.register);
 app.post("/api/login",authentication.login);
 
-app.post('/validar', function(req,res){
+app.post('/valid', async(req,res) => {
     const datos = req.body;
+    const user = req.body.user;
+    const user_email = req.body.user_email;
+    const password = req.body.password;
 
-    let user = datos.user
-    let user_email = datos.user_email
-    let password = datos.password
-
-    let registrar ="INSER INTO usuarios(user_id,user_username,_user_email,password)"
+    let passwordHaash = await bcryptjs.hash(password, 8);
+    conexion.query('INSER INTO usuarios SET ?', {user:user, user_email:user_email, password:passwordHaash}, async(error, results) =>{
+      if(error){
+        console.log(error);
+      }else{
+        res.send('los datos se enviaron con exito')
+      }
+    })
 });
 
 //obtener datos para mysql

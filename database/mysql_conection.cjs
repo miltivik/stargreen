@@ -3,7 +3,8 @@ const { Connection } = require('promise-mysql');
 
 var conexion = mysql.createConnection({
         host:"localhost",
-        database:"stargreen",
+        database:"Stargreen",
+        //database:"stargreen",
         user:"root",
         password:""
 });
