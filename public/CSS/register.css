@@ -129,3 +129,7 @@ section a{
     color: #248f60;
     font-size: 25px;
 }
+.para-fuera {
+    position: absolute;
+    left: -99999px;
+}

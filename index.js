@@ -28,6 +28,7 @@ app.use(morgan('dev'))
 
 //motor de plantillas
 app.set("view engine", "ejs");
+
 app.get("/", function(req,res){
   res.render("registro");
 });
@@ -42,6 +43,7 @@ dotenv.config({path:'/env/.env'});
 //configuracion
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
+app.use(express.urlencoded ({extended: false}));
 
 // Rutas
 //app.get("/",(req,res)=> res.sendFile (__dirname + "/HTML/login.html"));
@@ -55,19 +57,20 @@ app.get("/pasarela.html",(req,res)=> res.sendFile (__dirname + "/HTML/pasarela.h
 app.post("/api/register",authentication.register);
 app.post("/api/login",authentication.login);
 
-app.post('./valid', async(req,res) => {
-    const datos = req.body;
-    const user = req.body.user;
-    const user_email = req.body.user_email;
-    const password = req.body.password;
+app.post('/valid', function(req,res){
+    const datos = req.body
 
-    let passwordHaash = await bcryptjs.hash(password, 8);
-    conexion.query('INSERT INTO usuarios SET ?', {user:user, user_email:user_email, password:passwordHaash}, async(error, results) =>{
-      if(error){
-        console.log(error);
-      }else{
-        res.send('los datos se enviaron con exito')
-      }
+    let user_username = datos.user
+    let user_email = datos.user_email;
+    let password = datos.password;
+
+    let registrar = "INSERT INTO `usuarios` (`user_id`, `user_username`, `user_email`, `password`) VALUES (NULL, '"+user_username+"', '"+user_email+"', '"+password+"')"
+    conexion.query(registrar, function(error){
+        if (error) {
+            throw error
+        }else{
+            console.log ("Los datos se hicieron con exito")
+        }
     })
 });
 
