@@ -26,6 +26,16 @@ app.get('/productos',(req,res) => {
 //Middlewares
 app.use(morgan('dev'))
 
+//motor de plantillas
+app.set("view engine", "ejs");
+app.get("/", function(req,res){
+  res.render("registro");
+});
+
+app.get("/login.ejs", function(req,res){
+  res.render("login");
+});
+
 //dotenv config
 dotenv.config({path:'/env/.env'});
 
@@ -34,7 +44,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 
 // Rutas
-app.get("/",(req,res)=> res.sendFile (__dirname + "/HTML/login.html"));
+//app.get("/",(req,res)=> res.sendFile (__dirname + "/HTML/login.html"));
 app.get("/register",(req,res)=> res.sendFile (__dirname + "/HTML/register.html"));
 app.get("/producto.html",(req,res)=> res.sendFile (__dirname + "/HTML/producto.html"));
 app.get("/index.html",(req,res)=> res.sendFile (__dirname + "/HTML/index.html"));
