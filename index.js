@@ -64,12 +64,27 @@ app.post('/valid', function(req,res){
     let user_email = datos.user_email;
     let password = datos.password;
 
+    /*let buscar = "SELECT * FROM usuarios WHERE user_username = "+user_username +" ";
+    conexion.query(buscar, function(error,row){
+        if (error){
+            throw error
+        }else{
+            if(row.length>0){
+                console.log("No se puede registrar, usuario ya existente");
+            }
+        }
+    });
+*/
     let registrar = "INSERT INTO `usuarios` (`user_id`, `user_username`, `user_email`, `password`) VALUES (NULL, '"+user_username+"', '"+user_email+"', '"+password+"')"
     conexion.query(registrar, function(error){
         if (error) {
-            throw error
+            let mensaje;
+            mensaje = "Los datos ya existen";
+            res.render("registro", {mensaje});
         }else{
-            console.log ("Los datos se hicieron con exito")
+            let mensaje1;
+            mensaje1 = "Registro exitoso!";
+            res.render("registro", {mensaje1});
         }
     })
 });

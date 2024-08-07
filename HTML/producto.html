@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/CSS/principal-producto.css">
     <link rel="stylesheet" href="/CSS/menu-bar.css">
     <script src="/JS/principal-producto.min.js" defer></script>
-    
+
 </head>
 <body>
     <!-- Menu bar con Mega -->
@@ -81,7 +81,7 @@
             <div class="content">
                 <a class="icon-login" href="http://localhost:4000/">
                     <img src="/IMG/login.png" alt="">
-                 </a>   
+                 </a>
             </div>
         </div>
         <!-- Icono del carrito -->
@@ -114,8 +114,10 @@
                 <a href="/menu-producto.html"><img src="/IMG/render-2.png" alt="" class="product-img"></a>
                 <h2 class="product-title">Palo de Golf</h2>
                 <span class="price">$60</span>
-                <i class="fa-solid fa-basket-shopping add-cart"></i>
+                <i class="fa-solid fa-basket-shopping add-cart" onclick="showToast()"></i>
             </div>
+
+            <div id="toastBox"></div>
              <!---Producto 2-->
             <div class="product-box box2">
                 <a href="/menu-producto.html"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1Prx7injtcJ2yssS_6kVTiDIC6tlnOFOJ3JcXfoBCAvVKomjK21TAf9gEEWJnf1uGEQNucDtV7633hIB7FlUMrJ6osgO3T8Rpzy2LqXMOEhP_sojL-kFml2y7uY0338V7GHKeq73N3GZxhu5iflowhFHPjBuRqXZcFipazIPO9s3n47aDnyY3LyBMMyRm/s320/render.png" alt="" class="product-img"></a>
@@ -178,9 +180,9 @@
     <footer class="footerr">
 
         <div class="container">
-           
+
             <div class="footer-row">
-               
+
                 <div class="footer-links">
                     <h4>Compañia</h4>
                     <ul class="footer-links">
@@ -190,7 +192,7 @@
                         <li><a href="#">Afiliate</a></li>
                     </ul>
                 </div>
-    
+
                 <div class="footer-links">
                     <h4>Productos</h4>
                     <ul class="footer-links">
@@ -200,7 +202,7 @@
                         <li><a href="#">Palos de Golf</a></li>
                     </ul >
                 </div>
-    
+
                 <div class="footer-links">
                     <h4>Preguntas</h4>
                     <ul class="footer-links">
@@ -210,7 +212,7 @@
                         <li><a href="#">Afiliate</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-links">
                     <h4>Contacto</h4>
                     <ul class="footer-links">
@@ -220,7 +222,7 @@
                         <li><a href="#">Afiliate</a></li>
                     </ul>
                 </div>
-    
+
                 <div class="footer-links">
                     <h4>Nuestras Redes</h4>
                     <div class="social-link">
@@ -231,16 +233,27 @@
                         <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-    
+
             </div>
-    
+
         </div>
         <br>
         <div class="copyright">
             <p>&copy;Stargreen 2024</p>
         </div>
-        
+
     </footer>
     <script src="/JS/principal-producto.min.js"></script>
+
+    <script>
+        let  toastBox = document.getElementById('toastBox');
+
+        function showToast(){
+            let toast = document.createElement('div');
+            toast.classList.add('toast');
+            toast.innerHTML = "Se añadio con exito";
+            toastBox.appendChild(toast);
+        }
+    </script>
 </body>
 </html>

@@ -78,7 +78,7 @@
 }
 .total-price {
     font-size: 1.2rem;
-    margin: 1rem 0 0 0; 
+    margin: 1rem 0 0 0;
 }
 .btn-buy {
     display: flex;
@@ -252,4 +252,12 @@
 .header .header-right li.menu-item {
     display: block;
     text-decoration: none;
+}
+.toast {
+    position: relative;
+    z-index: 0;
+    right: 0;
+}
+#toastBox {
+    position: absolute;
 }

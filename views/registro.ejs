@@ -20,6 +20,19 @@
             </a>
         </div>
 
+        <% if(typeof mensaje !== "undefined"){ %>
+            <p class="mensaje-alerta">
+                <%= mensaje %>
+            </p>
+
+        <% }%>
+
+        <% if(typeof mensaje1 !== "undefined"){ %>
+            <p class="mensaje-alerta2">
+                <%= mensaje1 %>
+            </p>
+
+        <% }%>
 
         <form class="register-box" action="/valid" method="post">
             <div class="register-header">
