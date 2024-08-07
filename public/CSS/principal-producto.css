@@ -254,10 +254,60 @@
     text-decoration: none;
 }
 .toast {
-    position: relative;
-    z-index: 0;
-    right: 0;
+    width: 400px;
+    height: 80px;
+    background-color: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    align-items: center;
+    position: sticky;
 }
 #toastBox {
     position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    z-index: 10;
+}
+.toast i {
+    margin: 0 20px;
+    font-size: 35px;
+    color: green;
+}
+.toast.error i {
+    color: red;
+}
+.toast.Invalid i {
+    color: orange;
+}
+
+.toast::after{
+
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: anim 4.05s linear forwards;
+    
+}
+@media screen {
+   .notification-fixed{
+    position: fixed;
+    bottom:0 ;
+} 
+}
+
+@keyframes anim {
+    100%{
+        width: 0;
+    }
 }

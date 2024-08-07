@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="/FUENTES/Neco_Complete/Fonts/WEB/css/neco.css">
     <link rel="stylesheet" href="/CSS/principal-producto.css">
     <link rel="stylesheet" href="/CSS/menu-bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link
+    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="/JS/principal-producto.min.js" defer></script>
 
 </head>
@@ -114,7 +117,7 @@
                 <a href="/menu-producto.html"><img src="/IMG/render-2.png" alt="" class="product-img"></a>
                 <h2 class="product-title">Palo de Golf</h2>
                 <span class="price">$60</span>
-                <i class="fa-solid fa-basket-shopping add-cart" onclick="showToast()"></i>
+                <i class="fa-solid fa-basket-shopping add-cart" onclick="showToast(successMsg)"></i>
             </div>
 
             <div id="toastBox"></div>
@@ -248,12 +251,33 @@
     <script>
         let  toastBox = document.getElementById('toastBox');
 
-        function showToast(){
+        let successMsg = "<i class='fa-solid fa-circle-check'></i> Se añadio al carrito con exito";
+        let invalidMsg = "<i class='fa-solid fa-circle-xmark'></i> Necesitas iniciar sesion para añadir al carrito";
+        let ErrorMsg = "<i class='fa-solid fa-circle-exclamation'></i> algo a ocurrido mal, intentalo mas tarde";
+    
+
+
+        function showToast(msg){
             let toast = document.createElement('div');
             toast.classList.add('toast');
-            toast.innerHTML = "Se añadio con exito";
+            toast.classList.add('notification-fixed');
+            toast.innerHTML = msg;
             toastBox.appendChild(toast);
+
+        if(msg.includes('error')){
+            toast.classList.add('error');
         }
+        
+        if(msg.includes('Invalid')){
+            toast.classList.add('Invalid');
+        }
+
+    setTimeout(()=>{
+        toast.remove();
+    },5000);
+    
+    }
+
     </script>
 </body>
 </html>
