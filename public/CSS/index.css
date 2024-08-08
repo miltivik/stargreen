@@ -1,5 +1,7 @@
 body{
     margin: 0px;
+    box-sizing: border-box;
+    
 }
 
 .pagina-1 {
@@ -37,7 +39,7 @@ body{
   color: #071432;
   font-weight: bold;
   background: #fff;
-  width: 200px;
+  width: 380px;
   box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0, inset 0px -6px 0px rgba(0, 0, 0, 0.1), inset 0px -2px 0px rgba(0, 0, 0, 0.15);
 }
 
@@ -59,4 +61,8 @@ body{
 .titulo-marca{
     display: flex;
     padding-left: 15px;
+}
+.background {
+    z-index: 999999999;
+    width: 100%;
 }
