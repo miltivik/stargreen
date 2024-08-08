@@ -296,14 +296,14 @@
     width: 100%;
     height: 5px;
     background: green;
-    animation: anim 4.05s linear forwards;
-    
+    animation: anim 4.1s linear forwards;
+
 }
 @media screen {
    .notification-fixed{
     position: fixed;
     bottom:0 ;
-} 
+}
 }
 
 @keyframes anim {

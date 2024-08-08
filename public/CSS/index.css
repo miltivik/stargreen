@@ -1,12 +1,12 @@
 body{
     margin: 0px;
-}   
+}
 
 .pagina-1 {
     display: flex;
     justify-content: center;
     align-content: center;
-    
+
 }
 
 .stargreen {
@@ -24,4 +24,39 @@ body{
     margin: auto;
     padding: 0 20px;
     margin: 0 20%;
+}
+
+/* CSS */
+.button-36 {
+  padding: 12px 26px;
+  padding-bottom: 18px;
+  border: 0;
+  font-size: 16px;
+  transition: all 150ms ease-in-out;
+  border-radius: 20px;
+  color: #071432;
+  font-weight: bold;
+  background: #fff;
+  width: 200px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0, inset 0px -6px 0px rgba(0, 0, 0, 0.1), inset 0px -2px 0px rgba(0, 0, 0, 0.15);
+}
+
+.button-36:hover {
+  filter: brightness(0.98);
+}
+
+.button-36:active {
+  filter: brightness(0.97);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 6px 0, inset 0px -1px 0px rgba(0, 0, 0, 0.15);
+}
+.fix{
+    position: absolute;
+    right: 50;
+    top: 70vh;
+}
+.titulo-marca{
+    display: flex;
+    padding-left: 15px;
 }
