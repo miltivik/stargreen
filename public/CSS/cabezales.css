@@ -1,6 +1,6 @@
 .banner {
-    background-color:#1c744c ;
-    
+    background-color:#1c744c;
+
 }
 .menuu {
     display: flex;
@@ -27,8 +27,9 @@ body{
     position: relative;
     padding-bottom: 100vh;
     min-width: 100vh;
-    
-}   
+    background-color: #f5f5dc;
+
+}
 
 .menuu a:hover {
     background-color:   #248f615d ;
@@ -61,7 +62,7 @@ body{
     width: 50%;
     margin: auto;
     padding: 0 0 0 5rem;
-    
+
 }
 
 .footer-links {
@@ -81,7 +82,7 @@ body{
     bottom: 0;
     width: 100%;
     max-height: 220px;
-    
+
 }
 
 .footer-row {
@@ -150,7 +151,7 @@ body{
     padding: 0;
 }
 
-.imagen-de-producto { 
+.imagen-de-producto {
     display: flex;
     justify-content: center;
     height: 80px;
@@ -169,7 +170,7 @@ body{
 .descripcion-1 {
     width: 300px;
     text-align: center;
-    
+
     margin: 0;
     padding: 0;
     font-size: 20px;
@@ -210,7 +211,7 @@ body{
     margin:0 0 0 0 ;
     justify-content: end;
     box-sizing: border-box;
- 
+
 }
 .menu-1 {
     display: flex;
@@ -221,3 +222,4 @@ body{
         padding: 4px 8px 4px 8px;
     }
 }
+

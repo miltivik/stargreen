@@ -28,7 +28,7 @@
 }
 
 .descripcion-1 {
-  
+
   font-family: 'Neco-Variable';
   src: url('../fonts/Neco-Variable.woff2') format('woff2'),
        url('../fonts/Neco-Variable.woff') format('woff'),
@@ -65,4 +65,9 @@
      font-weight:   600;
      font-display: swap;
      font-style: normal;
+}
+.black {
+        font-family: "Archivo Black", sans-serif;
+        font-weight: 400;
+        font-style: normal;
 }
