@@ -71,3 +71,16 @@
         font-weight: 400;
         font-style: normal;
 }
+
+@font-face {
+     font-family: 'coolvatica';
+     src: url(/FUENTES/coolvetica/coolvetica\ rg.otf);
+     font-weight: bold;
+     font-style: bold;
+}
+@font-face {
+     font-family: 'renogare';
+     src: url(/FUENTES/renogare/Renogare-regular.otf);
+     font-weight: normal;
+     font-style: normal;
+}
