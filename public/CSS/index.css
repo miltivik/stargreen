@@ -1,3 +1,4 @@
+
 body{
     margin: 0px;
     box-sizing: border-box;
@@ -15,12 +16,14 @@ body{
     height: 30px;
     margin:auto;
     padding:80% 0 0 15%;
+    z-index: 50;
 }
 
 .refran {
     height: 200px;
     margin:auto;
     padding:10px 0 0 0;
+    z-index: 5;
 }
 .reserva {
     margin: auto;
@@ -60,9 +63,22 @@ body{
 }
 .titulo-marca{
     display: flex;
+    position: absolute;
     padding-left: 15px;
+    z-index: 5;
+    color: #fff;
 }
-.background {
-    z-index: 999999999;
-    width: 100%;
+@media screen {
+    .background {
+    position: absolute;
+    z-index:0;
+    width: 100vw;
+    height: 100vh;
+}
+}
+
+.refran-marca {
+    z-index: 2000;
+    color: #fff;
+    position: relative;
 }
