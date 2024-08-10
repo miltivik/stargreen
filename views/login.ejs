@@ -26,7 +26,8 @@
         <div class="login-header">
             <header>Login</header>
         </div>
-        <div class="input-box">
+        <form action="/auth" method="post">
+            <div class="input-box">
             <label for="user"></label>
             <input type="text" class="input-field" placeholder="Email" autocomplete="off" required id="user" name="user">
         </div>
@@ -51,6 +52,8 @@
             <p>Don't have account? <a href="http://localhost:4000">Sign Up</a></p>
         </div>
     </div>
+        </form>
+        
    
 </body>
 </html>

@@ -93,3 +93,6 @@ app.post('/valid', function(req,res){
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded ({extended: false}));
+
+//autenticar register 
+app.post
