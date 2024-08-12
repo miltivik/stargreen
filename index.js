@@ -11,6 +11,7 @@ import path from "path";
 import {fileURLToPath} from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 import { methods as authentication } from "./controllers/authentication.controller.js";
+import { time } from "console";
 
 
 //Server
@@ -57,36 +58,36 @@ app.get("/pasarela.html",(req,res)=> res.sendFile (__dirname + "/HTML/pasarela.h
 app.post("/api/register",authentication.register);
 app.post("/api/login",authentication.login);
 
-app.post('/valid', function(req,res){
+app.post('/valid', async(req,res)=>{
     const datos = req.body
 
     let user_username = datos.user
     let user_email = datos.user_email;
     let password = datos.password;
 
-    /*let buscar = "SELECT * FROM usuarios WHERE user_username = "+user_username +" ";
-    conexion.query(buscar, function(error,row){
-        if (error){
-            throw error
-        }else{
-            if(row.length>0){
-                console.log("No se puede registrar, usuario ya existente");
-            }
-        }
-    });
-*/
-    let registrar = "INSERT INTO `usuarios` (`user_id`, `user_username`, `user_email`, `password`) VALUES (NULL, '"+user_username+"', '"+user_email+"', '"+password+"')"
-    conexion.query(registrar, function(error){
+    let passwordHash = await bcryptjs.hash(password,8);
+    conexion.query ('INSERT INTO usuarios SET ?',{user_username:user_username, user_email:user_email, password:passwordHash}, async(error,results)=>{
         if (error) {
-            let mensaje;
-            mensaje = "Los datos ya existen";
-            res.render("registro", {mensaje});
+            res.render("registro",{
+                alert_1:true,
+                alert_1Title:'Error',
+                alert_1Message:'Algo a ocurrido mal, intentalo mas tarde',
+                alert_1Icon:"error",
+                showConfirmButtom_1:false,
+                ruta_1:''
+            })
         }else{
-            let mensaje1;
-            mensaje1 = "Registro exitoso!";
-            res.render("registro", {mensaje1});
+            res.render("registro",{
+                alert:true,
+                alertTitle:'Registro',
+                alertMessage:' Registro Exitoso',
+                alertIcon:"success",
+                showConfirmButtom:false,
+                ruta:''
+            })
         }
     })
+
 });
 
 //obtener datos para mysql
@@ -95,4 +96,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded ({extended: false}));
 
 //autenticar register 
-app.post
+app.post ('/auth', async (req,res) =>{
+    const user = req.body.user;
+    const pass = req.body.pass;
+    let passwordHash = await bcryptjs.hash(pass,8);
+    if(user && pass){
+        conexion.query('SELECT * from usuarios WHERE user_username = ?', [user], async (error, results)=>{
+            if(results.length == 0 || !(await bcryptjs.compare(pass, results[0].pass))){
+                res.send ('Usuario o Contrasenia incorrectas');
+            }else{
+                res.send ('LOGIN CORRECTO')
+            }
+        })
+    }
+})

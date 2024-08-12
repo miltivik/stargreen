@@ -20,20 +20,6 @@
             </a>
         </div>
 
-        <% if(typeof mensaje !== "undefined"){ %>
-            <p class="mensaje-alerta">
-                <%= mensaje %>
-            </p>
-
-        <% }%>
-
-        <% if(typeof mensaje1 !== "undefined"){ %>
-            <p class="mensaje-alerta2">
-                <%= mensaje1 %>
-            </p>
-
-        <% }%>
-
         <form class="register-box" action="/valid" method="post">
             <div class="register-header">
                 <header>Register</header>
@@ -68,5 +54,34 @@
             </div>
         </div>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" ></script>
+
+    <% if(typeof alert !== "undefined") { %>
+        <script>
+            Swal.fire({
+                title:'<%= alertTitle %>',
+                text:'<%= alertMessage %>',
+                icon:'<%= alertIcon %>',
+                showConfirmButtom:<%= showConfirmButtom %>,     
+            }).then(()=>{
+                window.location = '/ <%= ruta %>'
+            })
+        </script>
+
+    <% } %>
+
+    <% if(typeof alert_1 !== "undefined"){ %>
+        <script>
+            Swal.fire({
+                title:'<%= alert_1Title %>',
+                text:'<%= alert_1Message %>',
+                icon:'<%= alert_1Icon %>',
+                showConfirmButtom:<%= showConfirmButtom_1 %>,     
+            }).then(()=>{
+                window.location = '/ <%= ruta_1 %>'
+            })
+        </script>
+
+    <% }%>
 </body>
 </html>
