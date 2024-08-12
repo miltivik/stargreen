@@ -172,7 +172,9 @@ h4 {
     padding: 20px 0;
 }
 .col-2 .offer-img {
-    padding: 50px;
+padding-left: -300px;
+position: relative;
+left: -20%;
 }
 
 /* CSS */
