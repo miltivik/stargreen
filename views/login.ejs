@@ -13,7 +13,7 @@
     <script src="/JS/login.js" defer></script>
     <title>Login | Stargreen</title>
 </head>
-<body> 
+<body>
     <div class="stargreen-box">
         <div class="stargreen-icon">
             <a class="stargreen-text-titulo" href="index.html">STARGREEN</a>
@@ -29,7 +29,7 @@
         <form action="/auth" method="post">
             <div class="input-box">
             <label for="user"></label>
-            <input type="text" class="input-field" placeholder="Email" autocomplete="off" required id="user" name="user">
+            <input type="text" class="input-field" placeholder="Username" autocomplete="off" required id="user" name="user">
         </div>
         <div class="input-box">
             <label for="password"></label>
@@ -53,7 +53,48 @@
         </div>
     </div>
         </form>
-        
-   
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" ></script>
+
+<% if(typeof alert_login_error !== "undefined") { %>
+    <script>
+        Swal.fire({
+            title:'<%= alert_login_errorTitle %>',
+            text:'<%= alert_login_errorMessage %>',
+            icon:'<%= alert_login_errorIcon %>',
+            showConfirmButtom:<%= showConfirmButtom_login_error %>,
+        }).then(()=>{
+            window.location = '/<%= ruta_login_error %>'
+        })
+    </script>
+
+<% } %>
+
+<% if(typeof alert_login_success !== "undefined") { %>
+    <script>
+        Swal.fire({
+            title:'<%= alert_login_successTitle %>',
+            text:'<%= alert_login_successMessage %>',
+            icon:'<%= alert_login_successIcon %>',
+            showConfirmButtom:<%= showConfirmButtom_login_success %>,
+        }).then(()=>{
+            window.location = '/<%= ruta_login_success %>'
+        })
+    </script>
+
+<% } %>
+
+<% if(typeof alert_login_missing !== "undefined") { %>
+    <script>
+        Swal.fire({
+            title:'<%= alert_login_missingTitle %>',
+            text:'<%= alert_login_missingMessage %>',
+            icon:'<%= alert_login_missingIcon %>',
+            showConfirmButtom:<%= showConfirmButtom_login_missing %>,
+        }).then(()=>{
+            window.location = '/<%= ruta_login_missing %>'
+        })
+    </script>
+
+<% } %>
 </body>
 </html>

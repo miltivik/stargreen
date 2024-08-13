@@ -66,6 +66,7 @@ app.post('/valid', async(req,res)=>{
     let password = datos.password;
 
     let passwordHash = await bcryptjs.hash(password,8);
+
     conexion.query ('INSERT INTO usuarios SET ?',{user_username:user_username, user_email:user_email, password:passwordHash}, async(error,results)=>{
         if (error) {
             res.render("registro",{
@@ -76,6 +77,7 @@ app.post('/valid', async(req,res)=>{
                 showConfirmButtom_1:false,
                 ruta_1:''
             })
+        console.log (error)
         }else{
             res.render("registro",{
                 alert:true,
@@ -95,18 +97,44 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded ({extended: false}));
 
-//autenticar register 
+//autenticar register
 app.post ('/auth', async (req,res) =>{
     const user = req.body.user;
-    const pass = req.body.pass;
+    const pass = req.body.password;
     let passwordHash = await bcryptjs.hash(pass,8);
     if(user && pass){
         conexion.query('SELECT * from usuarios WHERE user_username = ?', [user], async (error, results)=>{
-            if(results.length == 0 || !(await bcryptjs.compare(pass, results[0].pass))){
-                res.send ('Usuario o Contrasenia incorrectas');
+            if(results.length == 0 || !(await bcryptjs.compare(pass, results[0].password))){
+                res.render("login.ejs",{
+                    alert_login_error:true,
+                    alert_login_errorTitle:'Error',
+                    alert_login_errorMessage:'Algo a ocurrido mal, intentalo mas tarde',
+                    alert_login_errorIcon:"error",
+                    showConfirmButtom_login_error:false,
+                    ruta_login_error:'login.ejs'
+                })
             }else{
-                res.send ('LOGIN CORRECTO')
+
+                res.render("login.ejs",{
+                    alert_login_success:true,
+                    alert_login_successTitle:'Logueado con Exito',
+                    alert_login_successMessage:'Login Exitoso',
+                    alert_login_successIcon:"success",
+                    showConfirmButtom_login_success:false,
+                    timer:1500,
+                    ruta_login_success:'index.html'
+                })
             }
+        })
+    }else{
+        res.render("login.ejs",{
+            alert_login_missing:true,
+            alert_login_missingTitle:'Error',
+            alert_login_missingMessage:'Ingresa un usuario y/o una contraseña',
+            alert_login_missingIcon:"warning",
+            showConfirmButtom_login_missing:false,
+            timer:1500,
+            ruta_login_missing:'login.ejs'
         })
     }
 })
