@@ -25,9 +25,9 @@
     <header class="menuu banner" >
         <div class="header-right menuu">
             <ul class="main-menu menuu">
-                <li class="menu-item"><a href="/index.html" class="active barra">Inicio</a></li>
+                <li class="menu-item hover-menu"><a href="/index.html" class="active barra">Inicio</a></li>
 
-                <li class="menu-item mega-menu ">
+                <li class="menu-item mega-menu hover-menu">
                     <a href="/producto.html" >Productos </a>
                     <div class="mega-menu-wrapper slideInUp">
                         <div class="mega-menu-col">
@@ -73,24 +73,49 @@
                     </div>
                 </li>
 
-                <li class="menu-item"><a href="/sobre nosotros.html">Sobre Nosotros</a></li>
-                <li class="menu-item"><a href="/contacto.html">Contacto</a></li>
+                <li class="menu-item hover-menu"><a href="/sobre nosotros.html">Sobre Nosotros</a></li>
+                <li class="menu-item hover-menu"><a href="/contacto.html">Contacto</a></li>
             </ul>
         </div>
         <div class="login-icon">
             <div class="content">
-                <a class="icon-login" href="http://localhost:4000/">
-                    <img src="/IMG/login.png" alt="">
+                <a class="icon-login" href="#">
+                    <img src="/IMG/login.png" onclick="toggleMenu()">
                 </a>
             </div>
         </div>
-        <div class="sub-menu-wrap">
+        <div class="sub-menu-wrap" id="subMenu">
             <div class="sub-menu">
                 <div class="user-info">
                 <img src="/IMG/login.png" alt="">
-                <h3>Nombre Ejemplo</h3>  
+                <h3>Nombre Ejemplo</h3>
                 </div>
                 <hr>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/profile.png">
+                    <p>Iniciar sesion/Registrar</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/profile.png">
+                    <p>Editar profile</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/setting.png">
+                    <p>Configuracion</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/help.png">
+                    <p>Ayuda y soporte</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/logout.png">
+                    <p>Cerrar Sesion</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
             </div>
         </div>
         <div class="cart-icon-container">
@@ -124,7 +149,7 @@
     <div class="titule">
         <h2 class="stargreen"><span class="titulo-marca">STARGREEN</span></h2>
     </div>
-    <div>   
+    <div>
 
         <p class="refran"> <span class="refran-marca">Tus golpes volaran con Stargreen</span></p>
     </div>
@@ -313,6 +338,13 @@
     </div>
 </div>
 
+<script>
+    let subMenu = document.getElementById("subMenu");
+
+    function toggleMenu(){
+        subMenu.classList.toggle('open-menu');
+    }
+</script>
 
 </body>
 </html>
