@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/CSS/menu-bar.css">
     <link rel="stylesheet" href="/CSS/principal-producto.css">
     <script src="/JS/principal-producto.min.js" defer></script>
+    <link rel="stylesheet" href="/CSS/index.css">
 </head>
 <body>
     <!-- Menu bar con Mega -->
@@ -78,9 +79,43 @@
         <!-- Icono del login -->
         <div class="login-icon">
             <div class="content">
-                <a class="icon-login" href="http://localhost:4000/">
-                    <img src="/IMG/login.png" alt="">
-                 </a>   
+                <a class="icon-login" href="#">
+                    <img src="/IMG/login.png" onclick="toggleMenu()">
+                </a>
+            </div>
+        </div>
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                <img src="/IMG/login.png" alt="">
+                <h3>Nombre Ejemplo</h3>
+                </div>
+                <hr>
+                <a href="/" class="sub-menu-link">
+                    <img src="/IMG/profile.png">
+                    <p>Iniciar sesion/Registrar</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/profile.png">
+                    <p>Editar profile</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/setting.png">
+                    <p>Configuracion</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/help.png">
+                    <p>Ayuda y soporte</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/logout.png">
+                    <p>Cerrar Sesion</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
             </div>
         </div>
         <div class="cart-icon-container">
@@ -227,15 +262,14 @@
     <div class="copyright">
         <p>&copy;Stargreen 2024</p>
     </div>
+    <script>
+        let subMenu = document.getElementById("subMenu");
+    
+        function toggleMenu(){
+            subMenu.classList.toggle('open-menu');
+        }
+    </script>
     
 </footer>
 </body>
 </html>
-
-<!--sera la descripcion de los productos-->
-
-<!--nuestros palos de golf
-son diseñados con un tubo de metal de 11 mm de diametro para darle <br>
-una livianidad para que no se canse la mano, recubiertas de una goma de alta calidad <br>
-en la cual le dara a nuestro cliente un comodo agarre para que -->  
-

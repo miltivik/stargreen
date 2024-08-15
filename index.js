@@ -28,7 +28,7 @@ app.get('/productos',(req,res) => {
 app.use(morgan('dev'))
 
 //motor de plantillas
-app.set("view engine", "ejs");
+app.set("view engine",   "ejs");
 
 app.get("/", function(req,res){
   res.render("registro");
@@ -37,6 +37,10 @@ app.get("/", function(req,res){
 app.get("/login.ejs", function(req,res){
   res.render("login");
 });
+
+app.get("/profile-page.ejs", function(req,res){
+    res.render("profile-page");
+  });
 
 //dotenv config
 dotenv.config({path:'/env/.env'});

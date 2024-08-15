@@ -76,9 +76,43 @@
         </div>
         <div class="login-icon">
             <div class="content">
-                <a class="icon-login" href="http://localhost:4000/">
-                    <img src="/IMG/login.png" alt="">
-                 </a>
+                <a class="icon-login" href="#">
+                    <img src="/IMG/login.png" onclick="toggleMenu()">
+                </a>
+            </div>
+        </div>
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                <img src="/IMG/login.png" alt="">
+                <h3>Nombre Ejemplo</h3>
+                </div>
+                <hr>
+                <a href="/" class="sub-menu-link">
+                    <img src="/IMG/profile.png">
+                    <p>Iniciar sesion/Registrar</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/profile.png">
+                    <p>Editar profile</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/setting.png">
+                    <p>Configuracion</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/help.png">
+                    <p>Ayuda y soporte</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/IMG/logout.png">
+                    <p>Cerrar Sesion</p>
+                    <span><i class="fa-solid fa-angle-right"></i></span>
+                </a>
             </div>
         </div>
 
@@ -229,5 +263,15 @@
         </div>
 
     </footer>
+
+
+<script>
+    let subMenu = document.getElementById("subMenu");
+
+    function toggleMenu(){
+        subMenu.classList.toggle('open-menu');
+    }
+</script>
+
 </body>
 </html>
