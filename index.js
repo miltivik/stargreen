@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import dotenv from 'dotenv';
 import bcryptjs from 'bcryptjs';
 
+
 //fix para __dirname
 import path from "path";
 import {fileURLToPath} from "url";
@@ -52,6 +53,7 @@ app.use(express.urlencoded ({extended: false}));
 
 // Rutas
 //app.get("/",(req,res)=> res.sendFile (__dirname + "/HTML/login.html"));
+app.get("/email-recuperacion.html",(req,res)=> res.sendFile (__dirname + "/HTML/email-recuperacion.html"));
 app.get("/register",(req,res)=> res.sendFile (__dirname + "/HTML/register.html"));
 app.get("/producto.html",(req,res)=> res.sendFile (__dirname + "/HTML/producto.html"));
 app.get("/index.html",(req,res)=> res.sendFile (__dirname + "/HTML/index.html"));
@@ -95,6 +97,7 @@ app.post('/valid', async(req,res)=>{
     })
 
 });
+
 
 //obtener datos para mysql
 app.use(cors());
