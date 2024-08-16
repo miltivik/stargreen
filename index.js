@@ -5,8 +5,9 @@ import cors from 'cors';
 import bodyParser from "body-parser";
 import dotenv from 'dotenv';
 import bcryptjs from 'bcryptjs';
+import connectDB from "./database/mongodb.cjs";
 
-
+connectDB();
 //fix para __dirname
 import path from "path";
 import {fileURLToPath} from "url";

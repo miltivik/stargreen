@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --exec node index.js",
     "sql": "nodemon ./database/mysql_conection.cjs",
-    "mongo":"nodemon ./database/mongodb.js"
+    "mongo": "nodemon ./database/mongodb.cjs"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.3",
     "mysql2": "^3.11.0",
+    "nodemailer": "^6.9.14",
     "promise-mysql": "^5.2.0",
     "uuid": "^10.0.0"
   },
