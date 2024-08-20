@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="stargreen-box">
+        <div class="stargreen-icon">
+            <a class="stargreen-text-titulo" href="index.html">STARGREEN</a>
+            <a href="/HTML/index.html">
+                <img src="/IMG/descarga (3).png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <form action="/auth" method="post">
+        <div class="input-box">
+        <label for="user"></label>
+        <input type="text" class="input-field" placeholder="Username" autocomplete="off" required id="user" name="user">
+    </div>
+    <div class="input-box">
+        <label for="password"></label>
+        <input type="password" class="input-field" placeholder="Password" autocomplete="off" required id="password" name="password">
+    </div>
+    <div class="input-submit">
+        <button class="submit-btn" id="submit"></button>
+        <label for="submit">Sign In</label>
+    </div>
+    <div class="sign-up-link">
+        <p>Don't have account? <a href="http://localhost:4000">Sign Up</a></p>
+    </div>
+</div>
+    </form>
+</body>
+</html>

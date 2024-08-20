@@ -6,6 +6,10 @@ import bodyParser from "body-parser";
 import dotenv from 'dotenv';
 import bcryptjs from 'bcryptjs';
 import connectDB from "./database/mongodb.cjs";
+import  User  from "./models/User.cjs";
+import UserOTPVerification from "./models/UserOTPVerification.cjs";
+import nodemailer from 'nodemailer';
+import {v1} from 'uuid';
 
 connectDB();
 //fix para __dirname
@@ -30,7 +34,7 @@ app.get('/productos',(req,res) => {
 app.use(morgan('dev'))
 
 //motor de plantillas
-app.set("view engine",   "ejs");
+app.set("view engine","ejs");
 
 app.get("/", function(req,res){
   res.render("registro");
@@ -64,6 +68,7 @@ app.get("/menu-producto.html",(req,res)=> res.sendFile (__dirname + "/HTML/menu-
 app.get("/pasarela.html",(req,res)=> res.sendFile (__dirname + "/HTML/pasarela.html"));
 app.post("/api/register",authentication.register);
 app.post("/api/login",authentication.login);
+app.get("/OTP.html",(req,res)=> res.sendFile (__dirname + "/HTML/OTP.html"));
 
 app.post('/valid', async(req,res)=>{
     const datos = req.body
@@ -146,3 +151,11 @@ app.post ('/auth', async (req,res) =>{
         })
     }
 })
+
+// NODEMAILER STUFF
+let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+
+    }
+});
