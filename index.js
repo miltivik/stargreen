@@ -5,13 +5,18 @@ import cors from 'cors';
 import bodyParser from "body-parser";
 import dotenv from 'dotenv';
 import bcryptjs from 'bcryptjs';
-import connectDB from "./database/mongodb.cjs";
+import connectMongo from "./database/mongodb.cjs";
 import  User  from "./models/User.cjs";
 import UserOTPVerification from "./models/UserOTPVerification.cjs";
 import nodemailer from 'nodemailer';
 import {v1} from 'uuid';
+import mongoose from "mongoose";
+import JsonWebToken from "jsonwebtoken";
 
-connectDB();
+
+//Conexion de MongoDB
+mongoose.connect('mongodb://localhost:27017/email_db');
+connectMongo()
 //fix para __dirname
 import path from "path";
 import {fileURLToPath} from "url";
@@ -47,7 +52,10 @@ app.get("/login.ejs", function(req,res){
 app.get("/profile-page.ejs", function(req,res){
     res.render("profile-page");
   });
-
+//Escuchando MongoDB
+app.listen(3001, () =>{
+    console.log("mongoDB Running");
+})
 //dotenv config
 dotenv.config({path:'/env/.env'});
 
@@ -127,6 +135,16 @@ app.post ('/auth', async (req,res) =>{
                     ruta_login_error:'login.ejs'
                 })
             }else{
+                const token = JsonWebToken.sign(
+                    {user_username:user_username},
+                    process.env.JWT_SECRET,
+                    {expiresIn:process.env.JWT_EXPIRATION}
+                )
+
+                const coockieOption = {
+                    expires: new Date(Date.now()+process.env.JWT_COOCKIE_EXPIRATION * 24 * 60 * 60 * 1000),
+                    path: "/"
+                }
 
                 res.render("login.ejs",{
                     alert_login_success:true,
@@ -137,6 +155,8 @@ app.post ('/auth', async (req,res) =>{
                     timer:1500,
                     ruta_login_success:'index.html'
                 })
+                res.coockieOption("jwt",token,coockieOption);
+                res.send({status:'ok', message:'Usuario con coockies correctamente', redirect:'/HTML/index.html'})
             }
         })
     }else{
@@ -159,3 +179,5 @@ let transporter = nodemailer.createTransport({
 
     }
 });
+
+const users = []

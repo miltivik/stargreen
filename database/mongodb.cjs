@@ -1,14 +1,27 @@
 const mongoose = require('mongoose');
 
-const connectDB = async () => {
-    try{
-    const cn = await mongoose.connect('mongodb://127.0.0.1/email_db')
-    cn.STATES.connected
-    ? console.log('MongoDB connect')
-    : console.log('Error in MongoDB')
-    } catch(error){
-        console.error()
-    }
-}
+const DB_URI = `mongodb://localhost:27017/email_db`
 
-module.exports = connectDB;
+module.exports = () => {
+
+    const connectMongo = () => {
+
+        mongoose.connect(
+            DB_URI,
+            {
+                keepAlive: true,
+                userNewUrlParser: true,
+                useUnifiedTopology:true
+            },
+            (err) => {
+                if (err) {
+                    console.log("DB: ERROR");
+                }else{
+                    console.log('Conexion correcta');
+                }
+            }
+        )
+        connectMongo ();
+    }
+
+}
