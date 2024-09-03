@@ -4,9 +4,10 @@ const { Connection } = require('promise-mysql');
 
 var conexion = mysql.createConnection({
         host:"localhost",
-        database:"Stargreen",
-        //database:"stargreen",
+        //database:"Stargreen",
+        database:"stargreen",
         user:"root",
+        password:"MasterQ2024!",
         password:""
 });
 

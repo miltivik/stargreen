@@ -20,18 +20,22 @@
         </div>
     </div>
 
-    <form action="/auth" method="post">
+    <form action="/reqOTP" method="post">
         <div class="input-box">
         <label for="user"></label>
-        <input type="text" class="input-field" placeholder="Username" autocomplete="off" required id="user" name="user">
-    </div>
+        <input type="email" class="input-field" placeholder="Enter your Email" autocomplete="off" required id="OTPfield" name="EmailOTP">
+        </div>
+      
+<button class="button-27" role="button">Send OTP</button>
+</form>
+<form action="/verifyOTP" method="post">
     <div class="input-box">
         <label for="password"></label>
-        <input type="password" class="input-field" placeholder="Password" autocomplete="off" required id="password" name="password">
+        <input type="password" class="input-field" placeholder="Enter your OTP" autocomplete="off" required id="OTPfield" name="password">
     </div>
     <div class="input-submit">
         <button class="submit-btn" id="submit"></button>
-        <label for="submit">Sign In</label>
+        <label for="submit">OTP</label>
     </div>
     <div class="sign-up-link">
         <p>Don't have account? <a href="http://localhost:4000">Sign Up</a></p>
