@@ -1,31 +1,31 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
+// import nodemailer from "nodemailer";
 
-async function sendMail(params) {
-const transport = nodemailer.createTransport({
-        service:"gmail",
-        auth:{
-            user:"ismamed4@gmail.com",
-            pass:"Coockie888!!!"
-        }
-    })
+const userGmail = "ismamed4@gmail.com";
+const passAppGmail = "syul ykfk tzio hmjc";
 
-    const mailOptions ={
-        from:"ismamed4@gmail.com",
-        to:"littleby08@gmail.com",
-        subject:"Este es una prueba para que puedas hacer una verificacion de email",
-        text:"Esta es una prueba",
-    }
-    
-    try{
-    const result = await transport.sendMail(mailOptions);
-    console.log("Correo enviado");
-    
-    }catch(error){
-        console.log("Email Wrong", error);
-        
-    }
+// Set up Nodemailer transporter
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: userGmail,
+    pass: passAppGmail,
+  },
+});
 
-}
-sendMail();
+// Define a route for sending emails
+// Set up email options
+const mailOptions = {
+  from: userGmail,
+  to: userGmail,
+  subject: "Test Email 222",
+  text: "This is a test email from Node.js!",
+};
 
-module.exports = sendMail;
+// Send email
+transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+    console.log(error);
+  }
+  console.log("Email sent: " + info.response);
+});
