@@ -6,12 +6,14 @@ import bodyParser from "body-parser";
 import dotenv from 'dotenv';
 import bcryptjs from 'bcryptjs';
 import connectMongo from "./database/mongodb.cjs";
-import  User  from "./models/User.cjs";
+import  User  from "./models/userModel.cjs";
 import UserOTPVerification from "./models/UserOTPVerification.cjs";
 import nodemailer from 'nodemailer';
 import {v1} from 'uuid';
 import mongoose from "mongoose";
 import JsonWebToken from "jsonwebtoken";
+import  emailHelper  from "./utils/sendEmail.cjs";
+import  crypto  from "crypto";
 
 
 //Conexion de MongoDB
@@ -27,7 +29,7 @@ import { time } from "console";
 
 //Server
 const app = express();
-app.set("port",4000);
+app.set("port",4000 );
 app.listen(app.get("port"));
 console.log("servidor corriendo en el puerto",app.get("port"));
 
@@ -44,6 +46,7 @@ app.set("view engine","ejs");
 app.get("/", function(req,res){
   res.render("registro");
 });
+
 
 app.get("/login.ejs", function(req,res){
   res.render("login");
@@ -160,11 +163,32 @@ app.post ('/auth', async (req,res) =>{
 })
 
 // NODEMAILER STUFF
-let transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
+app.post("/send-email", async (req, res) => {
+    const { to, subject, text } = req.body;
+  
+    try {
+      let info = await emailHelper(to, subject, text);
+      res.status(200).send(`Email sent: ${info.response}`);
+    } catch (error) {
+      res.status(500).send("Error sending email");
+    }
+  });
 
+  //Mongose
+app.post("/", async(req,res)=>{
+    try {
+        const { user,user_email, password } = req.body;
+        const MUser = new User({
+            user,
+            email,
+            password,
+            emailToken : crypto.randomBytes(64).toString('hex'),
+            isVerified : false
+        })
+    const newUser = await user.save()
+        res.render("login")
+    } catch (error) {
+        console.log(error);
+        
     }
 });
-
-const users = []

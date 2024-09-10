@@ -13,3 +13,14 @@ document.getElementById("register-form").addEventListener("submit",async(e)=>{
         })
     });
 });
+
+app.post("/send-email", async (req, res) => {
+    const { to, subject, text } = req.body;
+  
+    try {
+      let info = await emailHelper(to, subject, text);
+      res.status(200).send(`Email sent: ${info.response}`);
+    } catch (error) {
+      res.status(500).send("Error sending email");
+    }
+  });
