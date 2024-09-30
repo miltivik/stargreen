@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const DB_URI = `mongodb://localhost:27017/email_db`
+const DB_URI = `mongodb://localhost:27017/Email`
 
 module.exports = () => {
 

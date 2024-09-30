@@ -6,7 +6,7 @@ import bodyParser from "body-parser";
 import dotenv from 'dotenv';
 import bcryptjs from 'bcryptjs';
 import connectMongo from "./database/mongodb.cjs";
-import  User  from "./models/userModel.cjs";
+import  MUser  from "./models/userModel.cjs";
 import UserOTPVerification from "./models/UserOTPVerification.cjs";
 import nodemailer from 'nodemailer';
 import {v1} from 'uuid';
@@ -17,7 +17,7 @@ import  crypto  from "crypto";
 
 
 //Conexion de MongoDB
-mongoose.connect('mongodb://localhost:27017/email_db');
+mongoose.connect('mongodb://localhost:27017/test');
 connectMongo()
 //fix para __dirname
 import path from "path";
@@ -175,7 +175,7 @@ app.post("/send-email", async (req, res) => {
   });
 
   //Mongose
-app.post("/", async(req,res)=>{
+app.post("http://localhost:4000", async(req,res)=>{
     try {
         const { user,user_email, password } = req.body;
         const MUser = new User({
@@ -185,7 +185,7 @@ app.post("/", async(req,res)=>{
             emailToken : crypto.randomBytes(64).toString('hex'),
             isVerified : false
         })
-    const newUser = await user.save()
+    const newUser = await MUser.save()
         res.render("login")
     } catch (error) {
         console.log(error);
