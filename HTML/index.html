@@ -140,6 +140,23 @@
                 </div>
             </div>
         </div>
+        <style>
+            @keyframes appear {
+                from{
+                    opacity: 0;
+                    scale: 0.5;
+                }
+                to{
+                    opacity: 1;
+                    scale: 1;
+                }
+            }
+            .block{
+                animation: appear linear;
+                animation-timeline: view();
+                animation-range: entry 0 cover 40%;
+            }
+        </style>
     </header>
 
     <div class="background">
@@ -165,10 +182,18 @@
     </div>
 </section>
 <!--Principal categorias-->
-<div class="categories">
-<div class="small-container">
+<div class="categories view">
+<div class="small-container block">
     <div class="row">
+<<<<<<< Updated upstream
         <div class="col-3 animate__animated animate__fadeInUp animate__delay-2s">
+=======
+<<<<<<< HEAD
+        <div class="col-3">
+=======
+        <div class="col-3 animate__animated animate__fadeInUp animate__delay-2s">
+>>>>>>> daebe8fe7e8be179b52eff6af508f7b1efd84fdd
+>>>>>>> Stashed changes
             <img src="/IMG/render-2.png" alt="">
         </div>
         <div class="col-3">
@@ -207,8 +232,8 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-half"></i>
+                <p>$50.00</p>
             </div>
-            <p>$50.00</p>
         </div>
         <div class="col-4">
             <img src="/IMG/render.png" alt="">

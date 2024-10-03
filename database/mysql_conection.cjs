@@ -7,8 +7,8 @@ var conexion = mysql.createConnection({
         database:"Stargreen",
         database:"stargreen",
         user:"root",
-        password:"MasterQ2024!",
-        //password:""
+        //password:"MasterQ2024!",
+        password:""
 });
 
 conexion.connect(function(error){
