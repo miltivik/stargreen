@@ -164,7 +164,7 @@
 }
 .box1 {
     position: relative;
-    left: 30%;
+    left: 50%;
     width: 228px;
     margin: 20px 0;
 }
@@ -177,7 +177,7 @@
 }
 .box3 {
     position: relative;
-    left: 35%;
+    left: 15%;
     margin: 0%;
     width: 228px;
     overflow: hidden;

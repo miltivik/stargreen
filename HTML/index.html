@@ -157,6 +157,57 @@
                 animation-range: entry 0 cover 40%;
             }
         </style>
+                <style>
+                    @keyframes appear-left {
+                        from{
+                            opacity: 0;
+                            transform: translateX(-100px);
+                        }
+                        to{
+                            opacity: 1;
+                            transform: translateX(0px);
+                        }
+                    }
+                    .left{
+                        animation: appear-left linear;
+                        animation-timeline: view();
+                        animation-range: entry 0 cover 40%;
+                    }
+                </style>
+                                <style>
+                                    @keyframes appear-mini {
+                                        from{
+                                            opacity: 0;
+                                            scale: 0.7;
+                                        }
+                                        to{
+                                            opacity: 1;
+                                            scale: 1;
+                                        }
+                                    }
+                                    .mini{
+                                        animation: appear-mini linear;
+                                        animation-timeline: view();
+                                        animation-range: entry 0 cover 40%;
+                                    }
+                                </style>
+                                                <style>
+                                                    @keyframes appear-right {
+                                                        from{
+                                                            opacity: 0;
+                                                            transform: translateX(100px);
+                                                        }
+                                                        to{
+                                                            opacity: 1;
+                                                            transform: translateX(0px);
+                                                        }
+                                                    }
+                                                    .appear-right{
+                                                        animation: appear-right linear;
+                                                        animation-timeline: view();
+                                                        animation-range: entry 0 cover 40%;
+                                                    }
+                                                </style>
     </header>
 
     <div class="background">
@@ -185,10 +236,7 @@
 <div class="categories view">
 <div class="small-container block">
     <div class="row">
-        <div class="col-3 animate__animated animate__fadeInUp animate__delay-2s">
         <div class="col-3">
-        <div class="col-3 animate__animated animate__fadeInUp animate__delay-2s">
-
             <img src="/IMG/render-2.png" alt="">
         </div>
         <div class="col-3">
@@ -203,10 +251,10 @@
 
 <!--Principal productos-->
 
-<div class="small-container">
-    <h2 class="title-featured">Productos Destacados</h2>
+<div class="small-container view">
+    <h2 class="title-featured left">Productos Destacados</h2>
     <div class="row">
-        <div class="col-4">
+        <div class="col-4 mini">
             <img src="/IMG/render.png" alt="">
             <h4>Producto titulo</h4>
             <div class="rating">
@@ -218,7 +266,7 @@
             </div>
             <p>$50.00</p>
         </div>
-        <div class="col-4">
+        <div class="col-4 mini">
             <img src="/IMG/render.png" alt="">
             <h4>Producto titulo</h4>
             <div class="rating">
@@ -230,8 +278,8 @@
                 <p>$50.00</p>
             </div>
         </div>
-        <div class="col-4">
-            <img src="/IMG/render.png" alt="">
+        <div class="col-4 mini ">
+        <img src="/IMG/render.png" alt="">
             <h4>Producto titulo</h4>
             <div class="rating">
                 <i class="fa fa-star"></i>
@@ -243,8 +291,8 @@
             <p>$50.00</p>
         </div>
     </div>
-    <h2 class="title-featured">Ultimos productos</h2>
-    <div class="row">
+    <h2 class="title-featured appear-right">Ultimos productos</h2>
+    <div class="row block">
         <div class="col-4">
             <img src="/IMG/render.png" alt="">
             <h4>Producto titulo</h4>
